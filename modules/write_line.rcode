@@ -1,0 +1,4 @@
+if statement:str(writeline_method_keyword==spaced); name:ifWriteLine; ident:"   ";
+   WriteStr {quoted}
+   newln
+endIf(ifWriteLine);

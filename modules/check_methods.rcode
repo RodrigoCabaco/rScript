@@ -1,3 +1,13 @@
+import split
+str spaced >>""
+str quoted >>""
+
+getSplit from:line; to:quoted; index:1; separator:quote;
+getSplit from:quoted; to:quoted; index:0; separator:quote;
+getSplit from:line; to:spaced; index:0; separator:" ";
+
+method file:modules/write_line; content:all;
+
 if statement:str(line==readline_method_keyword); name:ifReadline; ident:"   ";
    method file:modules/read_line; content:all;
 endIf(ifReadline);

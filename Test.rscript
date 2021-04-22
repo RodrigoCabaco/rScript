@@ -1,1 +1,2 @@
-double(myDouble)=2;
+WriteLine "Hi";
+WriteLine "there";

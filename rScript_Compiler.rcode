@@ -3,19 +3,27 @@ import filestream
 import split
 import ./modules
 
-#string(myString) = something;
+#string(myString) = sometng;
 #double(myNumber) = 123;
 
+#LISTS
 list(str) "code_format"
 list(str) "code"
 list(str) "stringValues"
 list(num) "doubleValues"
 list(str) "doubleNames"
 list(str) "stringNames"
+#END-LISTS
+
+#COMMON-VARIABLES
+str quote >>""
+str(quote+")
+#END-COMMON-VARIABLES
 
 #KEYWORDS
 str string_keyword >>"string"
 str double_keyword >>"double"
+str writeline_method_keyword >>"WriteLine"
 str readline_method_keyword >>".readline"
 #END-KEYWORDS
 
@@ -23,6 +31,7 @@ num lines >>0
 str codeStr >>""
 str line_finisher >>";"
 ReadFile file:arg1; str:codeStr;
+strip(codeStr)
 list(str).ToCharArray:codeStr; to:code_format;
 for x in range:code_format.length; name:for1; ident:"    ";
     getStrListValue(code_format[x])
@@ -37,8 +46,9 @@ for current_line in range:code.length; name:compile; ident:"    ";
 
     getSplit from:line; to:current_keyword; index:0; separator:"(";
     #CHECK FOR KEYWORDS
-    method file:modules/check_keywords; content:all;
     method file:modules/check_methods; content:all;
+    method file:modules/check_keywords; content:all;
+    
 endFor(compile);
 newln
 #$readline

@@ -7,3 +7,4 @@ getSplit from:name; to:value; index:1; separator:"=";
 getSplit from:name; to:name; index:0; separator:")";
 stringNames.add >>name
 stringValues.add >>value
+
