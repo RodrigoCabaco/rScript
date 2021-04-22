@@ -1,1 +1,1 @@
-double(myString)=2;
+double(myDouble) = 2;

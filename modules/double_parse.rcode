@@ -1,0 +1,18 @@
+import split
+str name >>""
+str value >>""
+getSplit from:line; to:name; index:1; separator:"(";
+getSplit from:name; to:value; index:1; separator:"=";
+getSplit from:name; to:name; index:0; separator:")";
+strToNum(value)
+str doubleNames.add >>""
+str(doubleNames.add+name)
+num doubleValues.add >>value
+
+for j in range:doubleNames.length; name:for3; ident:"    ";
+    getNumListValue(doubleValues[j])
+    getStrListValue(doubleNames[j])
+    WriteStr {doubleNames[j]}
+    Write " -> "
+    WriteNum {doubleValues[j]}
+endFor(for3);

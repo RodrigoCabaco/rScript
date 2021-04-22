@@ -1,4 +1,3 @@
-
 if statement:str(line==readline_method_keyword); name:ifReadline; ident:"   ";
    method file:modules/read_line; content:all;
 endIf(ifReadline);

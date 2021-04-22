@@ -9,7 +9,7 @@ import ./modules
 list(str) "code_format"
 list(str) "code"
 list(str) "stringValues"
-list(str) "doubleValues"
+list(num) "doubleValues"
 list(str) "doubleNames"
 list(str) "stringNames"
 

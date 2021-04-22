@@ -1,0 +1,6 @@
+str name >>""
+str value >>""
+getSplit from:line; to:name; index:1; separator:"(";
+getSplit from:name; to:value; index:1; separator:"=";
+getSplit from:name; to:name; index:0; separator:")";
+WriteStr {value}
