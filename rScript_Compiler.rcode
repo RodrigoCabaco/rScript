@@ -39,7 +39,6 @@ for current_line in range:code.length; name:compile; ident:"    ";
     #CHECK FOR KEYWORDS
     method file:modules/check_keywords; content:all;
     method file:modules/check_methods; content:all;
-    
 endFor(compile);
 newln
 #$readline

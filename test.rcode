@@ -1,0 +1,3 @@
+str myOtherString >>"Hello!"
+str myString >>myOtherString
+WriteStr {myString}
