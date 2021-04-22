@@ -1,0 +1,45 @@
+#!/usr/bin/rC
+import filestream
+import split
+import ./modules
+
+#string(myString) = something;
+#double(myNumber) = 123;
+
+list(str) "code_format"
+list(str) "code"
+list(str) "stringValues"
+list(str) "doubleValues"
+list(str) "doubleNames"
+list(str) "stringNames"
+
+#KEYWORDS
+str string_keyword >>"string"
+str double_keyword >>"double"
+str readline_method_keyword >>".readline"
+#END-KEYWORDS
+
+num lines >>0
+str codeStr >>""
+str line_finisher >>";"
+ReadFile file:arg1; str:codeStr;
+list(str).ToCharArray:codeStr; to:code_format;
+for x in range:code_format.length; name:for1; ident:"    ";
+    getStrListValue(code_format[x])
+    method file:modules/add_lines; content:all;
+endFor(for1);
+
+for current_line in range:code.length; name:compile; ident:"    ";
+    getStrListValue(code[current_line])
+    str line >>""
+    str(line+code[current_line])
+    str current_keyword >>""
+
+    getSplit from:line; to:current_keyword; index:0; separator:"(";
+    #CHECK FOR KEYWORDS
+    method file:modules/check_keywords; content:all;
+    method file:modules/check_methods; content:all;
+    
+endFor(compile);
+newln
+#$readline

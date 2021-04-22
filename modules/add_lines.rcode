@@ -1,0 +1,10 @@
+import split
+if statement:str(code_format[x]==line_finisher); name:if1; ident:"    "; 
+    str line >>""
+    #x--
+    getSplit from:codeStr; to:line; index:lines; separator:line_finisher;
+    str code.add >>""
+    str(code.add+line)
+    lines++
+    
+endIf(if1);

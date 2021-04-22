@@ -1,0 +1,21 @@
+import split
+
+if statement:str(string_keyword==current_keyword); name:ifString; ident:"    ";
+    str name >>""
+    str value >>""
+    getSplit from:line; to:name; index:1; separator:"(";
+    getSplit from:name; to:value; index:1; separator:"=";
+    getSplit from:name; to:name; index:0; separator:")";
+    WriteStr {name}
+    Write "->"
+    WriteStr {value}
+endIf(ifString);
+if statement:str(current_keyword==double_keyword); name:ifDouble; ident:"    ";
+    str name >>""
+    str value >>""
+    getSplit from:line; to:name; index:1; separator:"(";
+    getSplit from:name; to:value; index:1; separator:"=";
+    getSplit from:name; to:name; index:0; separator:")";
+    strToNum(l>>value)
+    WriteNum {l}
+endIf(ifDouble);
